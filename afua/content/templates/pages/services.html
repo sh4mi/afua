@@ -1,0 +1,109 @@
+{% extends 'Layout/header.html' %}
+{% load static %}
+{% block content %}
+
+        <!--================Header Menu Area =================-->
+            {% include 'Layout/navbar.html' %}
+ <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<div class="page_link">
+							<a href="index.html">Home</a>
+							<a href="service.html">Services</a>
+						</div>
+						<h2>Services</h2>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+<!--================Services Area =================-->
+        <section class="services_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>Our Offered Services</h2>
+        			<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit,</p>
+        		</div>
+        		<div class="row services_inner">
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="{% static 'img/icon/1.png' %}">
+        					<a href="#"><h4>Building Drawings</h4></a>
+        					<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="{% static 'img/icon/2.png' %}">
+        					<a href="#"><h4>Painting Constructions</h4></a>
+        					<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="{% static 'img/icon/3.png' %}">
+        					<a href="#"><h4>Repairing Constructions</h4></a>
+        					<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="{% static 'img/icon/1.png' %}">
+        					<a href="#"><h4>Building Drawings</h4></a>
+        					<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="{% static 'img/icon/2.png' %}">
+        					<a href="#"><h4>Painting Constructions</h4></a>
+        					<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        				</div>
+        			</div>
+        			<div class="col-lg-4 col-md-6">
+        				<div class="services_item">
+        					<img src="{% static 'img/icon/3.png' %}">
+        					<a href="#"><h4>Repairing Constructions</h4></a>
+        					<p>Lorem ipsum dolor sit amet, consecteturadipis icing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Services Area =================-->
+
+        <!--================Counter Area =================-->
+        <section class="counter_area">
+        	<div class="container">
+        		<div class="row m0 counter_inner">
+        			<div class="counter_item">
+        				<h4 class="counter">596</h4>
+        				<p>Projects Completed</p>
+        			</div>
+        			<div class="counter_item">
+        				<h4 class="counter">552</h4>
+        				<p>Really Happy Clients</p>
+        			</div>
+        			<div class="counter_item">
+        				<h4 class="counter">5962</h4>
+        				<p>Total Tasks Completed</p>
+        			</div>
+        			<div class="counter_item">
+        				<h4 class="counter">1009</h4>
+        				<p>Cups of Coffee Taken</p>
+        			</div>
+        			<div class="counter_item">
+        				<h4 class="counter">435</h4>
+        				<p>In House Professionals</p>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Counter Area =================-->
+         {% include 'Layout/footer.html' %}
+
+{% endblock %}

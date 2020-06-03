@@ -1,0 +1,111 @@
+{% extends 'Layout/header.html' %}
+{% load static %}
+{% block content %}
+
+     <!--================Header Menu Area =================-->
+            {% include 'Layout/navbar.html' %}
+ <!--================Home Banner Area =================-->
+        <section  class="banner_area">
+            <div class="banner_inner d-flex align-items-center" >
+            	<div  style="background-image:url(../img/banner/about-us.jpg) no-repeat scroll center center;" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container" >
+
+					<div class="banner_content text-center">
+						<div class="page_link">
+							<a href="index.html">Home</a>
+							<a href="service.html">Your Choice</a>
+						</div>
+						<h2>Type of Paints</h2>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+ <!--================Blog Categorie Area =================-->
+        <section class="blog_categorie_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/coverpaint2.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="blog-details.html"><h5>Daimond Paints</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>Write Something here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/coverpaint2.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="blog-details.html"><h5>Master Paints</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>Write Something here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/coverpaint2.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="blog-details.html"><h5>Dulux Paints</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>Write Something here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/coverpaint2.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="blog-details.html"><h5>Marvel Paints</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>Write Something here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/coverpaint2.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="blog-details.html"><h5>Sparco Paints</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>Write Something here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="categories_post">
+                            <img src="{% static 'img/blog/cat-post/coverpaint2.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="blog-details.html"><h5>Brighto Paints</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>Write Something here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--================Blog Categorie Area =================-->
+
+        <!--================Counter Area =================-->
+
+        <!--================End Counter Area =================-->
+         {% include 'Layout/footer.html' %}
+{% endblock %}

@@ -437,7 +437,7 @@ button:focus {
 }
 
 .home_banner_area .banner_inner .overlay {
-  background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
+  background: url(../img/banner/about-us.jpg) no-repeat scroll center center;
   position: absolute;
   left: 0;
   right: 0;
@@ -565,7 +565,7 @@ button:focus {
 }
 
 .banner_area .banner_inner .overlay {
-  background: url(../img/banner/banner.jpg) no-repeat scroll center center;
+  background: url(../img/banner/about-us.jpg) no-repeat scroll center center;
   position: absolute;
   left: 0;
   right: 0;
@@ -577,7 +577,7 @@ button:focus {
 }
 
 .banner_area .banner_inner .banner_content h2 {
-  color: #fff;
+  color: black;
   font-size: 48px;
   font-family: "Roboto", sans-serif;
   margin-bottom: 0px;
@@ -586,7 +586,7 @@ button:focus {
 
 .banner_area .banner_inner .banner_content .page_link a {
   font-size: 14px;
-  color: #fff;
+  color: black;
   font-family: "Roboto", sans-serif;
   margin-right: 32px;
   position: relative;
@@ -814,7 +814,7 @@ button:focus {
   left: 20px;
   right: 20px;
   bottom: 20px;
-  background: rgba(34, 34, 34, 0.8);
+  background: rgba(34, 34, 34, 0.57);
   color: #fff;
   -webkit-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
