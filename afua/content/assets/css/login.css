@@ -1,0 +1,17 @@
+.login-form
+{
+    margin: 50px;
+}
+.custom-banner
+{
+    text-align: center;
+    background: #222222;
+    color: #000000;
+    padding: 100px;
+    background-position: 10% 100%;
+}
+.custom-banner h2{
+
+    display: inline-block;
+    font-size: 46px;
+}

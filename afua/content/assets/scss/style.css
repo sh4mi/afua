@@ -53,7 +53,6 @@ Table of Content:
 a {
   text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -82,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 button:focus {
   outline: none;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
 }
 
 .p_120 {
@@ -146,7 +145,6 @@ button:focus {
   left: 0;
   z-index: 99;
   -webkit-transition: background 0.4s, all 0.3s linear;
-  -o-transition: background 0.4s, all 0.3s linear;
   transition: background 0.4s, all 0.3s linear;
 }
 
@@ -186,7 +184,7 @@ button:focus {
   padding: 0px;
   border-radius: 0px;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   margin: 0px;
   background: #fff;
 }
@@ -200,7 +198,6 @@ button:focus {
     text-align: left;
     opacity: 0;
     -webkit-transition: all 300ms ease-in;
-    -o-transition: all 300ms ease-in;
     transition: all 300ms ease-in;
     visibility: hidden;
     display: block;
@@ -223,7 +220,6 @@ button:focus {
   z-index: 3;
   opacity: 0;
   -webkit-transition: all 400ms linear;
-  -o-transition: all 400ms linear;
   transition: all 400ms linear;
 }
 
@@ -234,7 +230,6 @@ button:focus {
   border-bottom: 1px solid #ededed;
   margin-left: 0px;
   -webkit-transition: all 0.4s linear;
-  -o-transition: all 0.4s linear;
   transition: all 0.4s linear;
 }
 
@@ -243,7 +238,6 @@ button:focus {
   color: #222222;
   padding: 0px 30px;
   -webkit-transition: all 150ms linear;
-  -o-transition: all 150ms linear;
   transition: all 150ms linear;
   display: block;
   margin-right: 0px;
@@ -298,16 +292,14 @@ button:focus {
   right: 0;
   background: #fff;
   -webkit-transform: translateY(70px);
-  -ms-transform: translateY(70px);
-  transform: translateY(70px);
+          transform: translateY(70px);
   -webkit-transition: background 500ms ease, -webkit-transform 500ms ease;
   transition: background 500ms ease, -webkit-transform 500ms ease;
-  -o-transition: transform 500ms ease, background 500ms ease;
   transition: transform 500ms ease, background 500ms ease;
   transition: transform 500ms ease, background 500ms ease, -webkit-transform 500ms ease;
   -webkit-transition: transform 500ms ease, background 500ms ease;
   -webkit-box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
 .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
@@ -329,7 +321,6 @@ button:focus {
   display: inline-block;
   line-height: 45px;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -352,7 +343,6 @@ button:focus {
   font-weight: 500;
   color: #777777;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
   margin-right: 1px;
   margin-top: 8px;
@@ -375,7 +365,6 @@ button:focus {
   font-weight: 500;
   color: #fff;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
   margin-top: 8px;
   border-radius: 3px;
@@ -412,8 +401,7 @@ button:focus {
   border: none !important;
   font: normal normal normal 12px/1 FontAwesome;
   -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+          transform: rotate(0deg);
   height: auto;
   margin-top: -6px;
   right: 20px;
@@ -437,7 +425,7 @@ button:focus {
 }
 
 .home_banner_area .banner_inner .overlay {
-  background: url(../img/banner/about-us.jpg) no-repeat scroll center center;
+  background: url(../img/banner/home-banner.jpg) no-repeat scroll center center;
   position: absolute;
   left: 0;
   right: 0;
@@ -565,7 +553,7 @@ button:focus {
 }
 
 .banner_area .banner_inner .overlay {
-  background: url(../img/banner/about-us.jpg) no-repeat scroll center center;
+  background: url(../img/banner/banner.jpg) no-repeat scroll center center;
   position: absolute;
   left: 0;
   right: 0;
@@ -577,7 +565,7 @@ button:focus {
 }
 
 .banner_area .banner_inner .banner_content h2 {
-  color: black;
+  color: #fff;
   font-size: 48px;
   font-family: "Roboto", sans-serif;
   margin-bottom: 0px;
@@ -586,7 +574,7 @@ button:focus {
 
 .banner_area .banner_inner .banner_content .page_link a {
   font-size: 14px;
-  color: black;
+  color: #fff;
   font-family: "Roboto", sans-serif;
   margin-right: 32px;
   position: relative;
@@ -600,8 +588,7 @@ button:focus {
   right: -25px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .banner_area .banner_inner .banner_content .page_link a:last-child {
@@ -741,7 +728,6 @@ button:focus {
 
 .single-recent-blog-post .thumb img {
   -webkit-transition: all 0.7s linear;
-  -o-transition: all 0.7s linear;
   transition: all 0.7s linear;
 }
 
@@ -753,7 +739,6 @@ button:focus {
   line-height: 24px;
   padding: 10px 0px 13px;
   -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
@@ -769,8 +754,7 @@ button:focus {
 
 .single-recent-blog-post:hover img {
   -webkit-transform: scale(1.23) rotate(10deg);
-  -ms-transform: scale(1.23) rotate(10deg);
-  transform: scale(1.23) rotate(10deg);
+          transform: scale(1.23) rotate(10deg);
 }
 
 .tags .tag_btn {
@@ -814,20 +798,19 @@ button:focus {
   left: 20px;
   right: 20px;
   bottom: 20px;
-  background: rgba(34, 34, 34, 0.57);
+  background: rgba(34, 34, 34, 0.8);
   color: #fff;
   -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .categories_post .categories_details h5 {
@@ -918,7 +901,6 @@ button:focus {
   color: #222222;
   font-weight: 600;
   -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
@@ -987,7 +969,7 @@ button:focus {
 
 .blog_right_sidebar .search_widget .input-group .form-control:focus {
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
 }
 
 .blog_right_sidebar .search_widget .input-group .btn-default {
@@ -996,14 +978,13 @@ button:focus {
   background: transparent;
   border: 0px;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   font-size: 14px;
   color: #fff;
   padding: 0px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
   z-index: 1;
 }
 
@@ -1031,7 +1012,6 @@ button:focus {
   font-size: 14px;
   color: #222222;
   -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -1045,10 +1025,11 @@ button:focus {
 
 .blog_right_sidebar .popular_post_widget .post_item .media-body {
   -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-item-align: center;
-  align-self: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   padding-left: 20px;
 }
 
@@ -1058,7 +1039,6 @@ button:focus {
   color: #222222;
   margin-bottom: 4px;
   -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
 
@@ -1079,7 +1059,6 @@ button:focus {
 .blog_right_sidebar .post_category_widget .cat-list li {
   border-bottom: 2px dotted #eee;
   -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   padding-bottom: 12px;
 }
@@ -1157,7 +1136,7 @@ button:focus {
 .blog_right_sidebar .newsletter_widget .form-control:focus {
   outline: none;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
 }
 
 .blog_right_sidebar .newsletter_widget .bbtns {
@@ -1186,7 +1165,6 @@ button:focus {
   padding: 0px 13px;
   margin-bottom: 8px;
   -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   color: #222222;
   font-size: 12px;
@@ -1269,7 +1247,6 @@ button:focus {
   padding: 7px;
   font-size: 14px;
   -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 
@@ -1291,7 +1268,7 @@ button:focus {
   padding: 24px 35px 24px 30px;
   background-color: white;
   -webkit-box-shadow: -20.84px 21.58px 30px 0px rgba(176, 176, 176, 0.1);
-  box-shadow: -20.84px 21.58px 30px 0px rgba(176, 176, 176, 0.1);
+          box-shadow: -20.84px 21.58px 30px 0px rgba(176, 176, 176, 0.1);
   font-size: 14px;
   line-height: 24px;
   color: #777;
@@ -1338,7 +1315,6 @@ button:focus {
 
 .single-post-area .navigation-area .nav-left .thumb img {
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -1346,7 +1322,6 @@ button:focus {
   margin-left: 20px;
   opacity: 0;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -1375,7 +1350,6 @@ button:focus {
 
 .single-post-area .navigation-area .nav-right .thumb img {
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -1383,7 +1357,6 @@ button:focus {
   margin-right: 20px;
   opacity: 0;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -1478,7 +1451,6 @@ button:focus {
   display: block;
   font-weight: 600;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -1538,7 +1510,7 @@ button:focus {
 
 .comment-form .form-control:focus {
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   border: 1px solid #eee;
 }
 
@@ -1580,7 +1552,7 @@ button:focus {
   max-width: 555px;
   margin: auto;
   -webkit-box-shadow: 0px 10px 30px 0px rgba(153, 153, 153, 0.1);
-  box-shadow: 0px 10px 30px 0px rgba(153, 153, 153, 0.1);
+          box-shadow: 0px 10px 30px 0px rgba(153, 153, 153, 0.1);
   padding: 75px 50px;
   position: relative;
 }
@@ -1594,8 +1566,7 @@ button:focus {
   width: 98px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .reservation_form_area .res_form_inner:after {
@@ -1607,8 +1578,7 @@ button:focus {
   width: 98px;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .reservation_form .form-group input {
@@ -1617,7 +1587,7 @@ button:focus {
   border: 1px solid #eeeeee;
   outline: none;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   padding: 0px 15px;
   font-size: 13px;
   font-family: "Roboto", sans-serif;
@@ -1674,8 +1644,7 @@ button:focus {
   font-family: 'Linearicons-Free';
   color: #cccccc;
   -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
+          transform: rotate(0deg);
   border: none;
   margin-top: -17px;
   font-size: 13px;
@@ -1744,7 +1713,7 @@ button:focus {
 
 .contact_form .form-group .form-control:focus {
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   outline: none;
 }
 
@@ -1784,8 +1753,7 @@ button:focus {
   top: 36%;
   left: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%) !important;
-  -ms-transform: translateX(-50%) translateY(-50%) !important;
-  transform: translateX(-50%) translateY(-50%) !important;
+          transform: translateX(-50%) translateY(-50%) !important;
   margin: 0px;
   max-width: 500px;
   width: 100%;
@@ -1839,7 +1807,6 @@ button:focus {
   line-height: 70px;
   opacity: .5;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -2255,8 +2222,6 @@ h6 {
   font-weight: 500;
   cursor: pointer;
   -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
@@ -2539,8 +2504,8 @@ h6 {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .progress-table .table-row .country img {
@@ -2597,8 +2562,6 @@ h6 {
   background-size: cover !important;
   height: 200px;
   -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
 
@@ -2796,11 +2759,9 @@ h6 {
   border-radius: 50%;
   background: #f8b600;
   -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -2855,8 +2816,6 @@ h6 {
   border-radius: 8.5px;
   cursor: pointer;
   -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 
@@ -2870,11 +2829,9 @@ h6 {
   border-radius: 50%;
   background: #fff;
   -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -2928,8 +2885,6 @@ h6 {
   background: transparent;
   border-radius: 8.5px;
   -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
   cursor: pointer;
 }
@@ -2944,11 +2899,9 @@ h6 {
   border-radius: 50%;
   background: #fff;
   -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
   -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -3231,7 +3184,7 @@ h6 {
   border: none;
   border-radius: 0px;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   width: 100%;
   padding: 10px 0 10px 0px;
 }
@@ -3239,8 +3192,6 @@ h6 {
 .default-select .nice-select .list .option {
   font-weight: 300;
   -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   line-height: 28px;
   min-height: 28px;
@@ -3293,7 +3244,7 @@ h6 {
   border: none;
   border-radius: 0px;
   -webkit-box-shadow: none;
-  box-shadow: none;
+          box-shadow: none;
   width: 100%;
   padding: 10px 0 10px 0px;
 }
@@ -3305,8 +3256,6 @@ h6 {
 .form-select .nice-select .list .option {
   font-weight: 300;
   -webkit-transition: all 0.3s ease 0s;
-  -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   line-height: 28px;
   min-height: 28px;
@@ -3349,12 +3298,11 @@ h6 {
   border-radius: 0px;
   outline: none !important;
   -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+          box-shadow: none !important;
   text-align: center;
   border: 1px solid #fab700;
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3375,12 +3323,11 @@ h6 {
   border-radius: 0px;
   outline: none !important;
   -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+          box-shadow: none !important;
   text-align: center;
   border: 1px solid #fab700;
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3402,12 +3349,11 @@ h6 {
   border-radius: 0px;
   outline: none !important;
   -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+          box-shadow: none !important;
   text-align: center;
   border: 1px solid #fab700;
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3428,12 +3374,11 @@ h6 {
   border-radius: 0px;
   outline: none !important;
   -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+          box-shadow: none !important;
   text-align: center;
   border: 1px solid #eeeeee;
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3454,7 +3399,6 @@ h6 {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3474,7 +3418,6 @@ h6 {
   font-weight: 500;
   text-transform: uppercase;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
   border: none;
 }
@@ -3504,11 +3447,10 @@ h6 {
   padding-left: 10px;
   padding-right: 10px;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
   cursor: pointer;
   -webkit-box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.2);
-  box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.2);
+          box-shadow: -14.142px 14.142px 20px 0px rgba(157, 157, 157, 0.2);
 }
 
 .testimonials_area .owl-prev:hover, .testimonials_area .owl-next:hover {
@@ -3528,8 +3470,7 @@ h6 {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+          transform: translateX(-50%);
   bottom: 0px;
   height: 1px;
 }
@@ -3554,7 +3495,6 @@ h6 {
   border-radius: 10px;
   padding: 40px;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3572,7 +3512,6 @@ h6 {
   font-weight: 500;
   font-size: 20px;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3586,7 +3525,7 @@ h6 {
 
 .testi_item:hover .media {
   -webkit-box-shadow: 0px 10px 30px 0px rgba(157, 157, 157, 0.2);
-  box-shadow: 0px 10px 30px 0px rgba(157, 157, 157, 0.2);
+          box-shadow: 0px 10px 30px 0px rgba(157, 157, 157, 0.2);
   background: #fff;
   border-color: #fff;
 }
@@ -3610,7 +3549,6 @@ h6 {
   padding: 45px 55px;
   border-radius: 10px;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
   margin-bottom: 30px;
 }
@@ -3634,7 +3572,7 @@ h6 {
 
 .services_item:hover {
   -webkit-box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* End Services Area css
@@ -3648,8 +3586,8 @@ h6 {
 
 .builder_inner .builder_item {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 33.33%;
-  flex: 0 0 33.33%;
+      -ms-flex: 0 0 33.33%;
+          flex: 0 0 33.33%;
   max-width: 33.33%;
 }
 
@@ -3672,24 +3610,20 @@ h6 {
   height: 100%;
   opacity: 0;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease;
   -webkit-transform: scale(0.95);
-  -ms-transform: scale(0.95);
-  transform: scale(0.95);
+          transform: scale(0.95);
 }
 
 .builder_item .hover {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
   text-align: center;
   width: 100%;
   opacity: 0;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3698,7 +3632,6 @@ h6 {
   font-size: 20px;
   margin-bottom: 0px;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease;
   opacity: 0;
 }
@@ -3714,8 +3647,7 @@ h6 {
 
 .builder_item:hover:before {
   -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
+          transform: scale(1);
   opacity: 1;
 }
 
@@ -3753,7 +3685,6 @@ h6 {
   width: 100%;
   opacity: 0;
   -webkit-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
   transition: all 300ms ease;
 }
 
@@ -3763,12 +3694,10 @@ h6 {
   width: 100%;
   top: 50%;
   -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+          transform: translateY(-50%);
   text-align: center;
   opacity: 0;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3828,8 +3757,8 @@ h6 {
 
 .counter_inner .counter_item {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 20%;
-  flex: 0 0 20%;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
   max-width: 20%;
 }
 
@@ -3863,7 +3792,6 @@ h6 {
   padding: 40px 60px 40px 40px;
   margin-bottom: 30px;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
   border: 1px solid #eeeeee;
 }
@@ -3875,7 +3803,6 @@ h6 {
   color: #222222;
   margin-bottom: 20px;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -3892,7 +3819,7 @@ h6 {
 
 .feature_item:hover {
   -webkit-box-shadow: 0px 10px 30px 0px rgba(157, 157, 157, 0.2);
-  box-shadow: 0px 10px 30px 0px rgba(157, 157, 157, 0.2);
+          box-shadow: 0px 10px 30px 0px rgba(157, 157, 157, 0.2);
   border-color: #fff;
 }
 
@@ -4057,7 +3984,6 @@ h6 {
   color: #fff;
   margin-left: 6px;
   -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
   transition: all 0.3s linear;
   background: #111111;
   height: 30px;
@@ -4065,7 +3991,6 @@ h6 {
   text-align: center;
   display: inline-block;
   -webkit-transition: all 300ms linear 0s;
-  -o-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
 }
 
@@ -4075,5 +4000,4 @@ h6 {
 }
 
 /*---------------------------------------------------- */
-
 /*# sourceMappingURL=style.css.map */
