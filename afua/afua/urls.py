@@ -11,7 +11,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pages.urls')),
-
+    path('social-auth/', include('social_django.urls', namespace='social')),
+    path('accounts/',include('allauth.urls')),
 ]
 urlpatterns += i18n_patterns()
 

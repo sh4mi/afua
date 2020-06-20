@@ -8,7 +8,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <a class="navbar-brand logo_h" href="index.html"><img src="{% static 'img/logo.png' %}"></a>
+                <a class="navbar-brand logo_h" href="{% url 'home' %}"><img src="{% static 'img/logoo.png' %}"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -22,20 +22,22 @@
                         <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Project Management</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
+                         <li class="nav-item"><a class="nav-link" href="{% url 'shop' %}">Shop</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-                         <li class="nav-item"><a class="nav-link" href="{% url 'about-us' %}">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'about-us' %}">About</a></li>
                         <li class="nav-item submenu dropdown">
 									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SignUp</a>
 									<ul class="dropdown-menu">
                                         <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">For User</a></li>
-										<li class="nav-item"><a class="nav-link" href="{% url 'vendor' %}">For Vendor</a></li>
+										<li class="nav-item"><a class="nav-link" href="{% url 'tobevendor' %}">For Vendor</a></li>
 										<li class="nav-item"><a class="nav-link" href="#">For Contractor</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="{% url 'account' %}">Account</a></li>
 									</ul>
 								</li>
-
                        <ul class="nav navbar-nav navbar-right">
                         {% if user.is_authenticated %}
                         {% csrf_token %}
+                           <li class="nav-item"><a class="nav-link"  style="font-size:18px; color:Green; margin-right:20px solid green;" href="{% url 'accountview' %}" >Hello, {{request.user}}</a></li>
                         <li class="nav-item"><a class="nav-link"  href="{% url 'logout' %}">Logout</a></li>
                         {% else %}
                          <li class="nav-item"><a class="nav-link"  href="{% url 'login' %}"  >Login</a></li>

@@ -25,10 +25,14 @@ class UserProfile(models.Model):
     )
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES,default='', blank=True)
     bio = models.TextField(default='', blank=True)
-    phone = models.CharField(max_length=20, blank=True, default='')
+    first_phone = models.CharField(max_length=20, blank=True, default='')
+    second_phone = models.CharField(max_length=20, blank=True, default='')
     city = models.CharField(max_length=100, default='', blank=True)
+    Nic = models.CharField(max_length=50, blank=True, default='')
     country = models.CharField(max_length=100, default='', blank=True)
-    picture = models.ImageField(default="1.jpg",blank=True)
+    address = models.CharField(max_length=100, default='', blank=True)
+    shopname = models.CharField(max_length=100, default='', blank=True)
+    picture = models.ImageField(default="profile1.png",blank=True)
     
 
 

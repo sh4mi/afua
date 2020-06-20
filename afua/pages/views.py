@@ -7,8 +7,8 @@ from django.contrib import messages
 # from.models import Information
 from .import forms
 
-def home(requset):
-    return render(requset, 'pages/landing.html')
+
+
 
 def about(requset):
     return render(requset, 'pages/about-us.html')
@@ -25,6 +25,11 @@ def typepaint(requset):
 def typecement(requset):
     return render(requset, 'pages/typecement.html')
 
+def shop(requset):
+    return render(requset, 'pages/shop.html')
+
+def tobevendor(requset):
+    return render(requset, 'pages/tobevendor.html')
 
 
 def logoutUser(request):

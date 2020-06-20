@@ -3,26 +3,32 @@ from django.urls import reverse_lazy
 
 from django.contrib.auth import login, authenticate,logout
 from django.shortcuts import render, redirect
-
+from .forms import *
 import uuid
 from django.core.mail import send_mail
-
+from django.contrib import messages
 from django.conf import settings
 from django.http import HttpResponseRedirect, HttpResponse
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
+from .decorators import unauthenticated_user,allowed_users,admin_only
 User = get_user_model()
 
+unauthenticated_user
 def loginPage(request):
-
      if request.method=='POST':
         username=request.POST.get('username')
         password = request.POST.get('password')
         user=authenticate(request,username=username,password=password)
-        if user is not None:
-            login(request,user)
-            return redirect('home')
+        if user != None:
+            login(request, user)
+            if user.user_type == "1":
+                return render(request,'home')
+            elif user.user_type == "2":
+                return render(request,'pages/accountview')
+            else:
+                return render(request,'pages/accountsetting')
         else:
             context = {}
             messages.info(request,'Username or Password is incorrect')
@@ -36,6 +42,7 @@ def logoutUser(request):
         return redirect('login')
 
 # Create your views here.
+unauthenticated_user
 def registerPage(request):
     errors = []
     if request.method == 'POST':
@@ -79,16 +86,23 @@ def registerPage(request):
             
     return render(request, 'pages/register.html',{'errors':errors})
 
-
+unauthenticated_user
 def registerVendorPage(request):
     errors = []
     if request.method == 'POST':
         username = request.POST.get("username", "")
         email = request.POST.get("email", "")
-        phone = request.POST.get("phone", "")
+        first_phone = request.POST.get("first_phone", "")
         password = request.POST.get("password", "")
-        # country = request.POST.get("country", "")
-        if email and username and password and phone :
+        second_phone = request.POST.get("second_phone", "")
+        bio = request.POST.get("bio", "")
+        Nic = request.POST.get("Nic", "")
+        city = request.POST.get("city", "")
+        address = request.POST.get("address", "")
+        shopname = request.POST.get("shopname", "")
+        country = request.POST.get("country", "")
+        gender = request.POST.get("gender", "")
+        if email and username and password :
             try:
                 user,created = User.objects.get_or_create(username=username, email=email)
                 if created:
@@ -96,7 +110,15 @@ def registerVendorPage(request):
                     user.user_type = 'vendor'
                     user.set_password(password)
                     user.activation_key = uuid.uuid4().hex[:30]
-                    user.profile.phone = phone
+                    user.profile.first_phone = first_phone
+                    user.profile.second_phone = second_phone
+                    user.profile.bio = bio
+                    user.profile.Nic = Nic
+                    user.profile.city = city
+                    user.profile.shopname = shopname
+                    user.profile.address = address
+                    user.profile.country = country
+                    user.profile.gender = gender
                     if settings.ENABLE_USER_ACTIVATION:
                         user.is_active = False
                         user.save()
@@ -128,6 +150,8 @@ def registerVendorPage(request):
 
 
 
+def home(requset):
+    return render(requset, 'pages/landing.html')
 
 def vendor(request):
     return render(request, 'pages/vendor.html')
@@ -135,3 +159,19 @@ def vendor(request):
 
 def information(request):
    return render(request, 'pages/information.html')
+
+def accountview(request):
+   return render(request, 'pages/accountview.html')
+
+@allowed_users(allowed_roles=['customer'])
+def accountsetting(request):
+        customer = request.user.profile
+        form = UserForm(instance=customer)
+
+        if request.method == 'POST':
+            form = UserForm(request.POST, request.FILES, instance=customer)
+            if form.is_valid():
+                form.save()
+
+        context = {'form': form}
+        return render(request, 'pages/accountsetting.html', context)

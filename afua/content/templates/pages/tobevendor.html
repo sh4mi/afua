@@ -1,0 +1,57 @@
+{% extends 'Layout/header.html' %}
+{% load static %}
+{% block content %}
+
+        <!--================Header Menu Area =================-->
+            {% include 'Layout/navbar.html' %}
+ <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<div class="page_link">
+							<a href="index.html">Home</a>
+							<a href="service.html">To Be Vendor</a>
+						</div>
+						<h2>To Be Vendor</h2>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+<!--================Services Area =================-->
+        <section class="services_area p_120">
+        	<div class="container">
+        		<div class="main_title">
+        			<h2>Start Selling</h2>
+        			<p>Register Your Shop Now Start Your Bussines Upgrade</p>
+        		</div>
+        		<div class="row">
+                    <div class="col-md-12">
+                        <a href="{% url 'registerVendor' %}"><div class="blog_post">
+                            <img src="{% static 'img/icon/1.jpg' %}">
+                        </div></a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="{% url 'registerVendor' %}"><div class="blog_post">
+                            <img src="{% static 'img/icon/2.jpg' %}">
+                    </div></a>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="{% url 'registerVendor' %}"><div class="blog_post">
+                            <img src="{% static 'img/icon/3.jpg' %}">
+                        </div></a>
+                    </div>
+                    <div class="col-md-12">
+                        <div  class="blog_post">
+                            <img src="{% static 'img/icon/4.jpg' %}">
+                        </div>
+                    </div>
+        		</div>
+        	</div>
+        </section>
+        <!--================End Services Area =================-->
+
+{% endblock %}
