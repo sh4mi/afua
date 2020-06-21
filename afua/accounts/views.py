@@ -17,25 +17,25 @@ User = get_user_model()
 
 unauthenticated_user
 def loginPage(request):
-     if request.method=='POST':
+    if request.method=='POST':
         username=request.POST.get('username')
         password = request.POST.get('password')
         user=authenticate(request,username=username,password=password)
         if user != None:
             login(request, user)
-            if user.user_type == "1":
-                return render(request,'home')
-            elif user.user_type == "2":
-                return render(request,'pages/accountview')
+            if user.user_type == "customer":
+                return redirect('home')
+            elif user.user_type == "vendor":
+                return redirect('accountview')
             else:
                 return render(request,'pages/accountsetting')
         else:
             context = {}
             messages.info(request,'Username or Password is incorrect')
             return render(request, 'pages/login2.html', context)
-     else:
-      context = {}
-     return render(request, 'pages/login2.html', context)
+    else:
+        context = {}
+        return render(request, 'pages/login2.html', context)
 
 def logoutUser(request):
         logout(request)
@@ -92,15 +92,12 @@ def registerVendorPage(request):
     if request.method == 'POST':
         username = request.POST.get("username", "")
         email = request.POST.get("email", "")
-        first_phone = request.POST.get("first_phone", "")
         password = request.POST.get("password", "")
+        first_phone = request.POST.get("first_phone", "")
         second_phone = request.POST.get("second_phone", "")
-        bio = request.POST.get("bio", "")
-        Nic = request.POST.get("Nic", "")
-        city = request.POST.get("city", "")
-        address = request.POST.get("address", "")
-        shopname = request.POST.get("shopname", "")
+        cnic = request.POST.get("cnic", "")
         country = request.POST.get("country", "")
+        city = request.POST.get("city", "")
         gender = request.POST.get("gender", "")
         if email and username and password :
             try:
@@ -112,11 +109,8 @@ def registerVendorPage(request):
                     user.activation_key = uuid.uuid4().hex[:30]
                     user.profile.first_phone = first_phone
                     user.profile.second_phone = second_phone
-                    user.profile.bio = bio
-                    user.profile.Nic = Nic
+                    user.profile.Nic = cnic
                     user.profile.city = city
-                    user.profile.shopname = shopname
-                    user.profile.address = address
                     user.profile.country = country
                     user.profile.gender = gender
                     if settings.ENABLE_USER_ACTIVATION:

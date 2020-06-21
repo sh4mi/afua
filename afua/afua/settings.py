@@ -115,8 +115,8 @@ AUTHENTICATION_BACKENDS = [
 SITE_ID = 1
 LOGIN_REDIRECT_URL = "/"
 
-SOCIAL_AUTH_FACEBOOK_KEY	=	'182077893191786'	# Facebook App	ID
-SOCIAL_AUTH_FACEBOOK_SECRET	=	'1641d10945115ccfb969602180aafb3e'	# Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_KEY	=	'190286305708310'	# Facebook App	ID
+SOCIAL_AUTH_FACEBOOK_SECRET	=	'a5d24dfc09835d4a70a981b2a30898de'	# Facebook App Secret
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
