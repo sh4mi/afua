@@ -23,9 +23,9 @@ def loginPage(request):
         user=authenticate(request,username=username,password=password)
         if user != None:
             login(request, user)
-            if user.user_type == "1":
+            if user.user_type == 'customer':
                 return render(request,'home')
-            elif user.user_type == "2":
+            elif user.user_type == 'vendor':
                 return render(request,'pages/accountview')
             else:
                 return render(request,'pages/accountsetting')
@@ -156,14 +156,32 @@ def home(requset):
 def vendor(request):
     return render(request, 'pages/vendor.html')
 
+def vendor_shop(request):
+    errors = []
+    if request.method == 'POST':
+            name = request.POST.get("name", "")
+            first_phone = request.POST.get("first_phone", "")
+            second_phone = request.POST.get("second_phone", "")
+            status = request.POST.get("status", "")
+            Owner = request.user
+            form = vendorShop.objects.create(name=name, first_phone=first_phone,second_phone=second_phone,status=status,Owner=Owner)
+            # vendor_shop.Owner = request.user
+            form.save()
+            return redirect('accountview')
+    else:
+               # request was empty
+        errors.append("Please fill the form.")
+    return render(request, 'pages/vendor/vendor_shop.html', {'errors': errors})
+
 
 def information(request):
    return render(request, 'pages/information.html')
 
 def accountview(request):
+
    return render(request, 'pages/accountview.html')
 
-@allowed_users(allowed_roles=['customer'])
+
 def accountsetting(request):
         customer = request.user.profile
         form = UserForm(instance=customer)

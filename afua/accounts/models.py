@@ -45,3 +45,17 @@ def create_profile(sender, **kwargs):
         user_profile = UserProfile(user=user)
         user_profile.save()
 post_save.connect(create_profile, sender=User)
+
+class vendorShop(models.Model):
+    Owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    select = (
+        ('on','ON'),
+        ('off','OFF'),
+    )
+    status = models.CharField(max_length=10, choices=select, default='', blank=True)
+    name = models.CharField(max_length=20, blank=True, default='')
+    first_phone = models.CharField(max_length=20, blank=True, default='')
+    second_phone = models.CharField(max_length=20, blank=True, default='')
+
+    def __str__(self):
+        return self.name

@@ -1,0 +1,103 @@
+{% extends '../../Layout/header.html' %}
+{% load static %}
+<!-- is page ki css files -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="custom-banner" style="background-image: url({% static 'img/builder/landscape.jpg' %});">
+    <h2>Vendor Shop</h2>
+</div>
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Vendor Shop</div>
+                    <div class="card-body">
+                        <form action="" method="post">
+                            {% csrf_token %}
+
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Shop Name</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="name" class="form-control" name="name" required
+                                        autofocus>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="first_phone" class="col-md-4 col-form-label text-md-right">phone
+                                    number</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="first_phone" class="form-control" name="first_phone"
+                                        placeholder="03xx-xxxxxxx" required>
+                                </div>
+                            </div>
+                                <div class="form-group row">
+                                <label for="second_phone" class="col-md-4 col-form-label text-md-right">phone
+                                    number</label>
+                                <div class="col-md-6">
+                                    <input type="text" id="second_phone" class="form-control" name="second_phone"
+                                        placeholder="03xx-xxxxxxx" required>
+                                </div>
+                            </div>
+
+                            <div class="switch-wrap d-flex justify-content-between">
+										<p>Status</p>
+										<div class="confirm-switch">
+											<input type="checkbox" id="confirm-switch" checked>
+											<label for="confirm-switch"></label>
+										</div>
+									</div>
+
+                            <div class="form-group row">
+                                <label for="status" class="col-md-4 col-form-label text-md-right">Status
+                                    </label>
+                                <div class="col-md-6">
+                                    <select id="status" class="form-control" name="status"
+                                        placeholder="status" required>
+                                        <option value="...">.........</option>
+                                        <option value="on">ON</option>
+                                        <option value="off">OFF</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="remember"> Remember Me
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-md-6 offset-md-4">
+                                    {% for error in errors %}
+                                    <p class="text-danger" id="messages">{{error}}</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                                <a href="#" class="btn btn-link">
+                                    Already Register ? Sign in
+                                </a>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</main>
+{% endblock %}
