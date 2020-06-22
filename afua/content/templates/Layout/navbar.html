@@ -1,8 +1,7 @@
-
 {% load static %}
 <!--================Header Menu Area =================-->
 
-<header  class="header_area">
+<header class="header_area">
 
     <div class="main_menu">
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -22,30 +21,34 @@
                         <li class="nav-item active"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Project Management</a>
                         <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Services</a></li>
-                         <li class="nav-item"><a class="nav-link" href="{% url 'shop' %}">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'shop' %}">Shop</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'about-us' %}">About</a></li>
+                        {% if not user.is_authenticated %}
                         <li class="nav-item submenu dropdown">
-									<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SignUp</a>
-									<ul class="dropdown-menu">
-                                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">For User</a></li>
-										<li class="nav-item"><a class="nav-link" href="{% url 'tobevendor' %}">For Vendor</a></li>
-										<li class="nav-item"><a class="nav-link" href="#">For Contractor</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="{% url 'account' %}">Account</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="{% url 'VendorShop' %}">Vendor shop</a></li>
-
-									</ul>
-								</li>
-                       <ul class="nav navbar-nav navbar-right">
-                        {% if user.is_authenticated %}
-                        {% csrf_token %}
-                           <li class="nav-item"><a class="nav-link"  style="font-size:18px; color:Green; margin-right:20px solid green;" href="{% url 'accountview' %}" >Hello, {{request.user}}</a></li>
-                        <li class="nav-item"><a class="nav-link"  href="{% url 'logout' %}">Logout</a></li>
-                        {% else %}
-                         <li class="nav-item"><a class="nav-link"  href="{% url 'login' %}"  >Login</a></li>
-                           {% endif %}
-                       </ul>
-                       </ul>
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">SignUp</a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">For User</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'tobevendor' %}">For Vendor</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="#">For Contractor</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'account' %}">Account</a></li>
+                            </ul>
+                        </li>
+                        {% endif %}
+                        <ul class="nav navbar-nav navbar-right">
+                            {% if user.is_authenticated %}
+                            {% csrf_token %}
+                            <li class="nav-item"><a class="nav-link"
+                                    style="font-size:18px; color:Green; margin-right:20px solid green;"
+                                    href="{% url 'accountview' %}">Hello, {{request.user}}</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                            <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item"><a href="#" class="search"><i class="lnr lnr-magnifier"></i></a></li>
                     </ul>
@@ -55,4 +58,3 @@
     </div>
 </header>
 <!--================Header Menu Area =================-->
-
