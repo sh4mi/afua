@@ -1,0 +1,100 @@
+{% extends 'Layout/header.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .sidenav {
+  height: 100%;
+
+
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+</style>
+
+<br><br><br><br>
+<div class="row">
+    <div class="col-md-3">
+         <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
+               <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Add Products</a>
+        <a href="{% url 'detailShop' %}" class="list-group-item list-group-item-action bg-light">Shop Detail</a>
+        <a href="{% url 'editShop' %}" class="list-group-item list-group-item-action bg-light">Edit shop</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light"> Some thing new</a>
+        <a href="#" class="list-group-item list-group-item-action bg-light">Some thing new</a>
+      </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+    </div>
+    </div>
+    <div class="col-md-9">
+        <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
+            <strong>
+                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;">Shop Detail</h2>
+            </strong>
+        </div>
+        <div class="shop-grid row">
+            <div class="addshop item col-md-3">
+                <div class="categories_post">
+                            <img src="{% static 'img/builder/cont.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="{% url 'shopView' %}"><h5>Shop name</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>Write Something here</p>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+            <div class="shop item col-md-3">
+                <img src="{% static 'img/builder/cont.jpg' %}" alt="">
+                <h3>Shop name</h3>
+            </div>
+            <div class="shop item col-md-3">
+                <img src="{% static 'img/builder/cont.jpg' %}" alt="">
+                <h3>Shop name</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .shop-grid {
+
+        padding: 15px;
+
+    }
+
+    .shop-grid .item {
+
+        border: 1px solid #eee;
+        margin: 5px;
+        padding: 0px !important;
+
+    }
+
+    .item img {
+        width: 100%;
+    }
+</style>
+
+{% endblock %}

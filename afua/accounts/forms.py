@@ -4,17 +4,18 @@ from django.contrib.auth.models import User
 from django import forms
 from .models import *
 
-class VendorShop(ModelForm):
+class shopEdit(ModelForm):
 	class Meta:
 		model = vendorShop
-		fields = ['status','name','first_phone','second_phone','Owner']
+		fields = ['name','first_phone','second_phone','status']
 		widgets = {
 			'status': forms.Select(attrs={'class':'form-control'}),
-			'Owner': forms.Select(attrs={'class': 'form-control'}),
 			'name': forms.TextInput(attrs={'class': 'form-control'}),
 			'first_phone': forms.NumberInput(attrs={'class': 'form-control'}),
 			'second_phone': forms.NumberInput(attrs={'class': 'form-control'})
 			}
+
+
 
 class UserForm(ModelForm):
 	class Meta:

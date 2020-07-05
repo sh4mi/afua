@@ -159,7 +159,7 @@ def vendor_shop(request):
             status = request.POST.get("status", "")
             Owner = request.user
             form = vendorShop.objects.create(name=name, first_phone=first_phone,second_phone=second_phone,status=status,Owner=Owner)
-            # vendor_shop.Owner = request.user
+
             form.save()
             return redirect('accountview')
     else:
@@ -172,9 +172,25 @@ def information(request):
    return render(request, 'pages/information.html')
 
 def accountview(request):
-
    return render(request, 'pages/accountview.html')
 
+def shop_View(request):
+   return render(request, 'pages/vendor/shop_view.html')
+def shop_edit(request):
+    customer = request.user.profile
+    form = shopEdit(instance=customer)
+
+    if request.method == 'POST':
+        form = shopEdit(request.POST, request.FILES, instance=customer)
+        if form.is_valid():
+            form.save()
+
+    context = {'form': form}
+    return render(request, 'pages/vendor/shop_edit.html',context)
+
+def shop_details(request):
+
+    return render(request, 'pages/vendor/shop_details.html')
 
 def accountsetting(request):
         customer = request.user.profile

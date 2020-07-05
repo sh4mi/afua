@@ -1,0 +1,55 @@
+{% extends 'Layout/header.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .profile-pic {
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+
+<br><br><br><br>
+    <div class="col-md-12">
+        <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
+            <strong>
+                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;"> Edit Shop</h2>
+            </strong>
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form action="" method="post">
+                           {% csrf_token %}
+                                {% for field in form %}
+                                <div class="form-group">
+                                  {{ field.label_tag }}
+                                    <br/>
+                                  {{ field }}
+                                     </div>
+                                {% endfor %}
+
+
+                          <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</main>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

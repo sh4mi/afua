@@ -47,7 +47,7 @@ def create_profile(sender, **kwargs):
 post_save.connect(create_profile, sender=User)
 
 class vendorShop(models.Model):
-    Owner = models.OneToOneField(User, on_delete=models.CASCADE)
+    Owner = models.ForeignKey(User, on_delete=models.CASCADE )
     select = (
         ('on','ON'),
         ('off','OFF'),

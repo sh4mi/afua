@@ -15,7 +15,8 @@
 <div class="row">
     <div class="col-md-3">
         <div style="background-color:#E5E7E9;" class="card card-body">
-            <a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Home</a>
+            <a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Home</a><br>
+            <a class="btn btn-success" href="{% url 'VendorShop' %}"> Create shop &#8594;</a>
             <hr>
             <a href="{% url 'account' %}">
                 <h3 style="text-align: center">Account Settings</h3>
@@ -42,18 +43,29 @@
                 {% else %}
                 <p><strong>Gender : </strong> Female </p>
                 {% endif %}
+
             </div>
         </div>
     </div>
     <div class="col-md-9">
         <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
             <strong>
-                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;">Shop Detail</h2>
+                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;">Shops</h2>
             </strong>
+
         </div>
         <div class="shop-grid row">
             <div class="addshop item col-md-3">
-                <a href="{% url 'VendorShop' %}">Create shop</a>
+                <div class="categories_post">
+                            <img src="{% static 'img/builder/cont.jpg' %}" alt="post">
+                            <div class="categories_details">
+                                <div class="categories_text">
+                                    <a href="{% url 'shopView' %}"><h5>Shop name</h5></a>
+                                    <div class="border_line"></div>
+                                    <p>Write Something here</p>
+                                </div>
+                            </div>
+                        </div>
             </div>
             <div class="shop item col-md-3">
                 <img src="{% static 'img/builder/cont.jpg' %}" alt="">

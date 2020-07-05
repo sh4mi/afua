@@ -1,0 +1,66 @@
+{% extends 'Layout/header.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .profile-pic {
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+
+<br><br><br><br>
+    <div class="col-md-12">
+        <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
+            <strong>
+                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;"> Edit Shop</h2>
+            </strong>
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h1><kbd>Basic Detials</kbd></h1>
+                        <a><strong>Shop Name :</strong>{{vendorShop.name}}</a><br/>
+                       <a> <strong>Contact Number 1 :</strong>{{vendorShop.first_phone}}</a><br/>
+                        <a><strong>Contact Number 2 :</strong>{{vendorShop.first_second}}</a><br/>
+                        {% if vendorShop.status == 'on' %}
+                        <a><strong>Status : </strong> ON </a><br>
+                        {% else %}
+                        <a><strong>Status : </strong> OFF </a>
+                        {% endif %}
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h1><kbd>Order Detials</kbd></h1>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                    <h1><kbd>Other Detials</kbd></h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+    </div>
+</div>
+
+
+
+{% endblock %}
