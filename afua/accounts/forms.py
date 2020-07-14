@@ -9,11 +9,13 @@ class shopEdit(ModelForm):
 		model = vendorShop
 		fields = ['name','first_phone','second_phone','status']
 		widgets = {
-			'status': forms.Select(attrs={'class':'form-control'}),
+			'status': forms.Select(attrs={'class':'form-control '}),
 			'name': forms.TextInput(attrs={'class': 'form-control'}),
 			'first_phone': forms.NumberInput(attrs={'class': 'form-control'}),
 			'second_phone': forms.NumberInput(attrs={'class': 'form-control'})
 			}
+
+
 
 
 

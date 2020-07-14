@@ -66,16 +66,6 @@
 
                             <div class="form-group row">
                                 <div class="col-md-6 offset-md-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
                                     {% for error in errors %}
                                     <p class="text-danger" id="messages">{{error}}</p>
                                     {% endfor %}
@@ -85,11 +75,9 @@
 
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Register
+                                    Submit
                                 </button>
-                                <a href="#" class="btn btn-link">
-                                    Already Register ? Sign in
-                                </a>
+
                             </div>
                     </form>
                 </div>

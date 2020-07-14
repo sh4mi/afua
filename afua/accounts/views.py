@@ -150,22 +150,27 @@ def home(requset):
 def vendor(request):
     return render(request, 'pages/vendor.html')
 
-def vendor_shop(request):
+def add_product(request):
     errors = []
     if request.method == 'POST':
             name = request.POST.get("name", "")
-            first_phone = request.POST.get("first_phone", "")
-            second_phone = request.POST.get("second_phone", "")
-            status = request.POST.get("status", "")
-            Owner = request.user
-            form = vendorShop.objects.create(name=name, first_phone=first_phone,second_phone=second_phone,status=status,Owner=Owner)
+            shop = request.vendorShop
+            short_description = request.POST.get("short_description", "")
+            long_description = request.POST.get("long_description", "")
+            product_categories = request.Category
+            images = request.Images
+            price = request.POST.get("price", "")
+            quantity = request.POST.get("quantity", "")
+            form = Product.objects.create(name=name, shop=shop,short_description=short_description,long_description=long_description,product_categories=product_categories,images=images,
+                                             price=price, quantity=quantity)
 
             form.save()
-            return redirect('accountview')
+            return redirect('shopView')
     else:
                # request was empty
         errors.append("Please fill the form.")
-    return render(request, 'pages/vendor/vendor_shop.html', {'errors': errors})
+    return render(request, 'pages/vendor/add_product.html', {'errors': errors})
+
 
 
 def information(request):
@@ -174,8 +179,28 @@ def information(request):
 def accountview(request):
    return render(request, 'pages/accountview.html')
 
+def vendor_shop (request):
+    errors = []
+    if request.method == 'POST':
+        name = request.POST.get("name", "")
+        first_phone = request.POST.get("first_phone", "")
+        second_phone = request.POST.get("second_phone", "")
+        status = request.POST.get("status", "")
+        Owner = request.user
+        form = vendorShop.objects.create(name=name, first_phone=first_phone, second_phone=second_phone, status=status,
+                                         Owner=Owner)
+
+        form.save()
+        return redirect('accountview')
+    else:
+         # request was empty
+         errors.append("Please fill the form.")
+    return render(request, 'pages/vendor/vendor_shop.html', {'errors': errors})
+
+
 def shop_View(request):
    return render(request, 'pages/vendor/shop_view.html')
+
 def shop_edit(request):
     customer = request.user.profile
     form = shopEdit(instance=customer)
@@ -188,9 +213,11 @@ def shop_edit(request):
     context = {'form': form}
     return render(request, 'pages/vendor/shop_edit.html',context)
 
-def shop_details(request):
-
-    return render(request, 'pages/vendor/shop_details.html')
+def shop_details(request,myid):
+    vendorshop= vendorShop.objects.get(id=myid)
+    print(vendorshop)
+    context = {'vendorShop':vendorshop}
+    return render(request, 'pages/vendor/shop_details.html',context)
 
 def accountsetting(request):
         customer = request.user.profile
