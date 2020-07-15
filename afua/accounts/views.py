@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth import login, authenticate,logout
 from django.shortcuts import render, redirect
 from .forms import *
+from .models import *
 import uuid
 from django.core.mail import send_mail
 from django.contrib import messages
@@ -150,26 +151,36 @@ def home(requset):
 def vendor(request):
     return render(request, 'pages/vendor.html')
 
-def add_product(request):
+def add_product(request,shop_id):
     errors = []
     if request.method == 'POST':
-            name = request.POST.get("name", "")
-            shop = request.vendorShop
-            short_description = request.POST.get("short_description", "")
-            long_description = request.POST.get("long_description", "")
-            product_categories = request.Category
-            images = request.Images
-            price = request.POST.get("price", "")
-            quantity = request.POST.get("quantity", "")
-            form = Product.objects.create(name=name, shop=shop,short_description=short_description,long_description=long_description,product_categories=product_categories,images=images,
-                                             price=price, quantity=quantity)
-
-            form.save()
-            return redirect('shopView')
+        print(request.POST)
+        name = request.POST.get("name", "")
+        short_description = request.POST.get("short_description", "")
+        long_description = request.POST.get("long_description", "")
+        category_id = request.POST.get("category")
+        category = Category.objects.get(id=category_id)
+        price = request.POST.get("price", "")
+        quantity = request.POST.get("quantity", "")
+        product = Product(name=name,short_description=short_description,long_description=long_description,price=price,quantity=quantity)
+        shop = vendorShop.objects.get(id=shop_id)
+        product.shop = shop
+        product.save()
+        print(request.FILES)
+        if request.FILES:
+            for f in request.FILES.getlist('images[]'):
+                print("ok")
+                image = Images.objects.create(image=f)
+                product.images.add(image)
+        product.product_categories.add(category)
+        
+        # return redirect('shopView')
+        return HttpResponse("Do something")
     else:
                # request was empty
-        errors.append("Please fill the form.")
-    return render(request, 'pages/vendor/add_product.html', {'errors': errors})
+        categories = Category.objects.all()
+        #errors.append("Please fill the form.")
+    return render(request, 'pages/vendor/add_product.html', {'errors': errors,'categories':categories})
 
 
 

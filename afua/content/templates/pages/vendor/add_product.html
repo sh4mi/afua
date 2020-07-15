@@ -3,4 +3,22 @@
 {% block content %}
 <br><br><br><br><br>
 <h1>add product page</h1>
+<form action="add_product" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <input type="" name="name" placeholder="name" required class="" /><br>
+    <label for="">Categories</label><br>
+    <select name="category" multiple>
+        {% for category in categories %}
+        <option value="{{ category.id }}">{{ category.name }}</option>
+        {% endfor %}
+    </select><br><br>
+    <textarea class="" name="short_description" placeholder="short description"></textarea><br>
+    <textarea class="" name="long_description" placeholder="long description"></textarea><br>
+    <input type="number" min="1" name="price" placeholder="price" class="" /><br>
+    <input type="number" min="0" name="quantity" placeholder="quantity" class="" /><br>
+    <label for="">Images</label><br>
+    <input type="file" name="images[]" multiple /><br>
+    <input type="submit" /><br>
+</form>
 {% endblock %}

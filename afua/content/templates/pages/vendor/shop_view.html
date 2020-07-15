@@ -3,48 +3,48 @@
 {% block content %}
 <style>
     .sidenav {
-  height: 100%;
+        height: 100%;
 
 
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
-}
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-}
+    .sidenav a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+    }
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
 </style>
 
 <br><br><br><br>
 <div class="row">
     <div class="col-md-3">
-         <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
-               <!-- Sidebar -->
-    <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="{% url 'AddProduct' %}" class="list-group-item list-group-item-action bg-light">Add Products</a>
-<!--        <a href="{% url 'detailShop' %}" class="list-group-item list-group-item-action bg-light">Shop Detail</a>-->
-        <a href="{% url 'editShop' %}" class="list-group-item list-group-item-action bg-light">Edit shop</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light"> Some thing new</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Some thing new</a>
-      </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
-    </div>
+        <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
+            <!-- Sidebar -->
+            <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="list-group list-group-flush">
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
+                    <a href="{% url 'AddProduct' shop_id=1 %}"
+                        class="list-group-item list-group-item-action bg-light">Add Products</a>
+                    <!--        <a href="{% url 'detailShop' %}" class="list-group-item list-group-item-action bg-light">Shop Detail</a>-->
+                    <a href="{% url 'editShop' %}" class="list-group-item list-group-item-action bg-light">Edit shop</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light"> Some thing new</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-light">Some thing new</a>
+                </div>
+            </div>
+            <!-- /#sidebar-wrapper -->
+        </div>
     </div>
     <div class="col-md-9">
         <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
