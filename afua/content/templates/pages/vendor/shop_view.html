@@ -39,25 +39,30 @@
                         class="list-group-item list-group-item-action bg-light">Add Products</a>
                     <!--        <a href="{% url 'detailShop' %}" class="list-group-item list-group-item-action bg-light">Shop Detail</a>-->
                     <a href="{% url 'editShop' %}" class="list-group-item list-group-item-action bg-light">Edit shop</a>
-                    <a href="#" class="list-group-item list-group-item-action bg-light"> Some thing new</a>
+
                     <a href="#" class="list-group-item list-group-item-action bg-light">Some thing new</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
         </div>
     </div>
-    <div class="col-md-9">
-        <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
-            <strong>
-                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;">Product View</h2>
-            </strong>
-        </div>
+
+        <div class="col-md-9 mx-auto border border-info rounded p-10 m-2">
+            <h1 class="alert alert-info">Product View</h1>
+
         <div class="shop-grid row">
 
-            <div class="shop item col-md-3">
-                <img src="{% static 'img/builder/cont.jpg' %}" alt="">
-                <h3>product 1</h3><br>
-                <h5>product description and something else</h5>
+            <div class="col-md-3 border border-success rounded max-auto p-3 m-3">
+                <img src="/content/media/{{product.image}}" alt="">
+                <p><strong>Product name : </strong>{{product.name}}</p>
+                <p><strong>Short description : </strong>{{product.short_description}}</p>
+                <p><strong>Long description : </strong>{{product.long_description}}</p>
+                <p><strong> Category : </strong>{{product.category}}</p>
+                <p><strong>Price : </strong>{{product.price}}</p>
+                <p><strong>Quantity : </strong>{{product.quantity}}</p>
+                <p>{{product.created_at}}</p>
+                <p>{{product.update_at}}</p>
+                <a type="submit" class="btn btn-success" style="width: 215px" href="{% url 'edit_product' edit_id=1 %}">Edit Product</a>
             </div>
             <div class="shop item col-md-3">
                 <img src="{% static 'img/builder/cont.jpg' %}" alt="">

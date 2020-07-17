@@ -1,0 +1,48 @@
+{% extends '../../Layout/header.html' %}
+{% load static %}
+<!-- is page ki css files -->
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<br><br><br><br><br>
+<div class="col-md-9 mx-auto border border-success rounded p-10 m-3">
+            <h1 class="alert alert-success">Edit Product</h1>
+
+<main class="login-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                
+                   
+                        <form  class="form-horizontal" action="" method="POST">
+                            {% csrf_token %}
+                            
+                                
+                                          {% for field in form %}
+                                 <div class="form-group">
+                                {{ field.label_tag }}
+                                    <br/>
+                                  {{ field }}
+                                
+
+                                </div>
+                                {% endfor %}
+                            <br>
+                          <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-success">Submit</button>
+
+                            </div>
+                            
+                    </form>
+                    
+               
+            </div>
+        </div>
+    </div>
+  
+
+</main>
+</div>
+{% endblock %}
