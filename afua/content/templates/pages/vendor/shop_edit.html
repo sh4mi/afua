@@ -12,39 +12,92 @@
 </style>
 
 <br><br><br><br>
-    <div class="col-md-12">
-        <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
-            <strong>
-                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;"> Edit Shop</h2>
-            </strong>
-<main class="login-form">
-    <div class="cotainer">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <form action="" method="post">
-                           {% csrf_token %}
-                                {% for field in form %}
-                                <div class="form-group">
-                                  {{ field.label_tag }}
-                                    <br/>
-                                  {{ field }}
-                                     </div>
-                                {% endfor %}
-                            <br>
-                          <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+<div class="col-md-12">
+    <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
+        <strong>
+            <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;"> Edit Shop</h2>
+        </strong>
+        <main class="login-form">
+            <div class="cotainer">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">Vendor Shop</div>
+                            <div class="card-body">
+                                <form action="" method="post">
+                                    {% csrf_token %}
 
+                                    <div class="form-group row">
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">Shop
+                                            Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="name" class="form-control" value="{{ shop.name}}"
+                                                name="name" required autofocus>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="first_phone" class="col-md-4 col-form-label text-md-right">phone
+                                            number</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="first_phone" class="form-control"
+                                                value="{{ shop.first_phone}}" name="first_phone"
+                                                placeholder="03xx-xxxxxxx" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="second_phone" class="col-md-4 col-form-label text-md-right">phone
+                                            number</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="second_phone" class="form-control"
+                                                value="{{ shop.second_phone}}" name="second_phone"
+                                                placeholder="03xx-xxxxxxx" required>
+                                        </div>
+                                    </div>
+
+                                    <!--                            <div class="switch-wrap d-flex justify-content-between">-->
+                                    <!--										<p>Status</p>-->
+                                    <!--										<div class="confirm-switch">-->
+                                    <!--											<input type="checkbox" id="confirm-switch" checked>-->
+                                    <!--											<label for="confirm-switch"></label>-->
+                                    <!--										</div>-->
+                                    <!--									</div>-->
+
+                                    <!-- <div class="form-group row">
+                                                <label for="status" class="col-md-4 col-form-label text-md-right">Status
+                                                    </label>
+                                                <div class="col-md-6">
+                                                    <select id="status" class="form-control" name="status"
+                                                        placeholder="status" required>
+                                                        <option value="on">ON</option>
+                                                        <option value="off">OFF</option>
+                                                    </select>
+                                                </div>
+                                            </div> -->
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6 offset-md-4">
+                                            {% for error in errors %}
+                                            <p class="text-danger" id="messages">{{error}}</p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            Submit
+                                        </button>
+
+                                    </div>
+                                </form>
                             </div>
-                    </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    </div>
 
-</main>
+        </main>
 
     </div>
 </div>

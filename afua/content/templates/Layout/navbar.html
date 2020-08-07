@@ -33,8 +33,8 @@
                                 <li class="nav-item"><a class="nav-link" href="{% url 'tobevendor' %}">For Vendor</a>
                                 </li>
                                 <li class="nav-item"><a class="nav-link" href="#">For Contractor</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{% url 'account' %}">Account</a></li>
-                                <li class="nav-item"><a class="nav-link" href="{% url 'VendorShop' %}">Vendor Shop</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'CreateShop' %}">Vendor Shop</a>
+                                </li>
                             </ul>
                         </li>
                         {% endif %}
@@ -43,7 +43,8 @@
                             {% csrf_token %}
                             <li class="nav-item"><a class="nav-link"
                                     style="font-size:18px; color:Green; margin-right:20px solid green;"
-                                    href="{% url 'accountview' %}">Hello, {{request.user}}</a></li>
+                                    href="{% url 'accountview' username=request.user %}">Hello, {{request.user}}</a>
+                            </li>
                             <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
                             {% else %}
                             <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>

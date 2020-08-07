@@ -22,6 +22,7 @@
     <!-- main css -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 
     {% block css %}
     {% endblock %}
@@ -59,6 +60,10 @@
     <script src="{% static 'vendors/counter-up/jquery.counterup.js' %}"></script>
     <script src="{% static 'js/mail-script.js' %}"></script>
     <script src="{% static 'js/theme.js' %}"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+
+    <script src="{% static 'js/datatable.js' %}"></script>
 </body>
 
 </html>

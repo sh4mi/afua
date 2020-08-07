@@ -16,29 +16,30 @@
     <div class="col-md-3">
         <div style="background-color:#E5E7E9;" class="card card-body">
             <a class="btn btn-warning" href="{% url 'home' %}"> &#8592; Back to Home</a><br>
-            <a class="btn btn-success" href="{% url 'VendorShop' %}"> Create shop &#8594;</a>
+            {% if vendor == request.user %}
+            <a class="btn btn-success" href="{% url 'CreateShop' %}"> Create shop &#8594;</a>
+            {% endif %}
             <hr>
-            <a href="{% url 'account' %}">
+            <a href="{% url 'accountEdit' %}">
                 <h3 style="text-align: center">Account Settings</h3>
             </a>
             <hr>
-            <img class="profile-pic" src="{{request.user.profile.picture.url}}">
+            <img class="profile-pic" src="{{vendor.profile.picture.url}}">
             <br>
             <div style="background-color:white; color:black; ">
                 <strong>
                     <h4 style="color:black;border-left: 6px solid red; background-color: lightgrey;">User Detail</h4>
                 </strong>
-                <a><strong>Name : </strong> {{user}} </a><br>
-                <a><strong>Shop Name : </strong> {{user.profile.shopname}} </a><br>
-                <a><strong>Address : </strong> {{user.profile.address}} </a><br>
-                <a><strong>City : </strong> {{user.profile.city}} </a><br>
-                <a><STRONG>Nic : </STRONG> {{user.profile.Nic}} </a><br>
-                <a><strong>Email : </strong> {{user.email}} </a><br>
-                <a><strong>Morning Contact: </strong> {{user.profile.first_phone}} </a><br>
-                <a><strong>Evening Contact: </strong> {{user.profile.second_phone}} </a><br>
-                <a><strong>Bio:</strong> {{user.profile.bio}} </a><br>
-                <a><strong>Country : </strong> {{user.profile.country}} </a><br>
-                {% if user.profile.gender == 'M' %}
+                <a><strong>Name : </strong> {{vendor.username}} </a><br>
+                <a><strong>Address : </strong> {{vendor.profile.address}} </a><br>
+                <a><strong>City : </strong> {{vendor.profile.city}} </a><br>
+                <a><STRONG>Nic : </STRONG> {{vendor.profile.Nic}} </a><br>
+                <a><strong>Email : </strong> {{vendor.email}} </a><br>
+                <a><strong>Morning Contact: </strong> {{vendor.profile.first_phone}} </a><br>
+                <a><strong>Evening Contact: </strong> {{vendor.profile.second_phone}} </a><br>
+                <a><strong>Bio:</strong> {{vendor.profile.bio}} </a><br>
+                <a><strong>Country : </strong> {{vendor.profile.country}} </a><br>
+                {% if vendor.profile.gender == 'M' %}
                 <p><strong>Gender : </strong> Male </p><br>
                 {% else %}
                 <p><strong>Gender : </strong> Female </p>
@@ -55,26 +56,27 @@
 
         </div>
         <div class="shop-grid row">
-            <div class="addshop item col-md-3">
-                <div class="categories_post">
-                            <img src="{% static 'img/builder/cont.jpg' %}" alt="post">
-                            <div class="categories_details">
-                                <div class="categories_text">
-                                    <a href="{% url 'shopView' %}"><h5>Shop name</h5></a>
-                                    <div class="border_line"></div>
-                                    <p>Write Something here</p>
-                                </div>
+            {% for shop in shops %}
+
+            <div class="shop item col-md-3">
+                <a href="{% url 'shopView' id=shop.id %}">
+                    <div class="categories_post">
+                        <img src="{% static 'img/builder/cont.jpg' %}" alt="post">
+                        <div class="categories_details">
+                            <div class="categories_text">
+
+                                <h5>{{ shop.name}}</h5>
+
+                                <div class="border_line"></div>
+                                <p>Status: {{ shop.status }}</p>
                             </div>
                         </div>
+                    </div>
+                </a>
             </div>
-            <div class="shop item col-md-3">
-                <img src="{% static 'img/builder/cont.jpg' %}" alt="">
-                <h3>Shop name</h3>
-            </div>
-            <div class="shop item col-md-3">
-                <img src="{% static 'img/builder/cont.jpg' %}" alt="">
-                <h3>Shop name</h3>
-            </div>
+
+            {% endfor %}
+
         </div>
     </div>
 </div>

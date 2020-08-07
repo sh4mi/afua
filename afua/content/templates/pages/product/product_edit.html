@@ -1,0 +1,116 @@
+{% extends 'Layout/header.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .profile-pic {
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+
+<br><br><br><br>
+<div class="col-md-12">
+    <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
+        <strong>
+            <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;"> Edit Product</h2>
+        </strong>
+        <main class="login-form">
+            <div class="cotainer">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">Product Edit</div>
+                            <div class="card-body">
+                                <form action="" method="post">
+                                    {% csrf_token %}
+
+                                    <div class="form-group row">
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">Product
+                                            Name</label>
+                                        <div class="col-md-6">
+                                            <input type="text" id="name" class="form-control" value="{{ product.name}}"
+                                                name="name" required autofocus>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">Product
+                                            Categories</label>
+                                        <div class="col-md-6">
+                                            <select name="category" class="form-control select" multiple>
+                                                {% for category in categories %}
+                                                <option value="{{ category.id }}   ">
+                                                    {{ category.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <label for="first_phone" class="col-md-4 col-form-label text-md-right">Short
+                                            Description</label>
+                                        <div class="col-md-6">
+                                            <textarea name="short_description" id="" cols="30"
+                                                rows="10">{{ product.short_description }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="first_phone" class="col-md-4 col-form-label text-md-right">Long
+                                            Description</label>
+                                        <div class="col-md-6">
+                                            <textarea name="long_description" id="" cols="30"
+                                                rows="10">{{ product.long_description }}</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="second_phone" class="col-md-4 col-form-label text-md-right">price
+                                            number</label>
+                                        <div class="col-md-6">
+                                            <input type="number" class="form-control" min="1"
+                                                value="{{ product.price }}" name="price" placeholder="price" /><br>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="second_phone"
+                                            class="col-md-4 col-form-label text-md-right">Quantity</label>
+                                        <div class="col-md-6">
+                                            <input type="number" class="form-control" value="{{ product.quantity }}"
+                                                min="0" name="quantity" placeholder="quantity" /><br>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <div class="col-md-6 offset-md-4">
+                                            {% for error in errors %}
+                                            <p class="text-danger" id="messages">{{error}}</p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            Submit
+                                        </button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+    </div>
+</div>
+
+
+
+{% endblock %}

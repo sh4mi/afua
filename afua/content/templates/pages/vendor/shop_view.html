@@ -1,4 +1,6 @@
 {% extends 'Layout/header.html' %}
+
+
 {% load static %}
 {% block content %}
 <style>
@@ -28,17 +30,19 @@
 </style>
 
 <br><br><br><br>
-<div class="row">
-    <div class="col-md-3">
+<div class="row mb-5">
+    <div class="col-md-2">
         <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
             <!-- Sidebar -->
             <div class="bg-light border-right" id="sidebar-wrapper">
                 <div class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-                    <a href="{% url 'AddProduct' shop_id=1 %}"
+                    <a href="{% url 'accountview' username=request.user %}"
+                        class="list-group-item list-group-item-action bg-light">Profile</a>
+                    <a href="{% url 'AddProduct' shop_id=shop.id %}"
                         class="list-group-item list-group-item-action bg-light">Add Products</a>
                     <!--        <a href="{% url 'detailShop' %}" class="list-group-item list-group-item-action bg-light">Shop Detail</a>-->
-                    <a href="{% url 'editShop' %}" class="list-group-item list-group-item-action bg-light">Edit shop</a>
+                    <a href="{% url 'editShop' id=shop.id %}"
+                        class="list-group-item list-group-item-action bg-light">Edit shop</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light"> Some thing new</a>
                     <a href="#" class="list-group-item list-group-item-action bg-light">Some thing new</a>
                 </div>
@@ -49,21 +53,36 @@
     <div class="col-md-9">
         <div style="background-color:#F8F9F9; width:100%; " class="card card-body">
             <strong>
-                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;">Product View</h2>
+                <h2 style="color:black;border-left: 6px solid blue; background-color: lightgrey;">{{ shop.name }}</h2>
             </strong>
         </div>
-        <div class="shop-grid row">
-
-            <div class="shop item col-md-3">
-                <img src="{% static 'img/builder/cont.jpg' %}" alt="">
-                <h3>product 1</h3><br>
-                <h5>product description and something else</h5>
-            </div>
-            <div class="shop item col-md-3">
-                <img src="{% static 'img/builder/cont.jpg' %}" alt="">
-                <h3>product 2</h3>
-            </div>
+        <div class=" mt-3">
+            <h3>Products</h3>
         </div>
+        <table id="table_id" class="display mt-3">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.quantity }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>
+                        <a href="{% url 'editProduct' id=product.id %}" class="btn btn-sm btn-info">edit</a>
+                        <a href="#" class="btn btn-sm btn-danger">delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
     </div>
 </div>
 
@@ -86,5 +105,6 @@
         width: 100%;
     }
 </style>
+
 
 {% endblock %}

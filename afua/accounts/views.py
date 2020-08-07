@@ -27,7 +27,7 @@ def loginPage(request):
             if user.user_type == "customer":
                 return redirect('home')
             elif user.user_type == "vendor":
-                return redirect('accountview')
+                return redirect('accountview',username=username)
             else:
                 return render(request,'pages/accountsetting')
         else:
@@ -151,6 +151,36 @@ def home(requset):
 def vendor(request):
     return render(request, 'pages/vendor.html')
 
+
+def product_edit(request,id):
+    errors = []
+    product = Product.objects.get(pk=id)
+    if request.method == 'POST':
+        print(request.POST)
+        name = request.POST.get("name", "")
+        short_description = request.POST.get("short_description", "")
+        long_description = request.POST.get("long_description", "")
+        category_id = request.POST.get("category")
+        category = Category.objects.filter(id=category_id)
+        price = request.POST.get("price", "")
+        quantity = request.POST.get("quantity", "")
+        Product.objects.filter(pk=id).update(name=name,short_description=short_description,long_description=long_description,price=price,quantity=quantity)
+        # if request.FILES:
+        #     for f in request.FILES.getlist('images[]'):
+        #         print("ok")
+        #         image = Images.objects.create(image=f)
+        #         product.images.add(image)
+        # product.product_categories.add(category)
+        shop_id=product.shop.id
+        return redirect('shopView',id=shop_id)
+        # return HttpResponse("Do something")
+    else:
+               # request was empty
+        categories = Category.objects.all()
+        #errors.append("Please fill the form.")
+    return render(request, 'pages/product/product_edit.html', {'errors': errors,'categories':categories,'product':product})
+
+
 def add_product(request,shop_id):
     errors = []
     if request.method == 'POST':
@@ -174,8 +204,8 @@ def add_product(request,shop_id):
                 product.images.add(image)
         product.product_categories.add(category)
         
-        # return redirect('shopView')
-        return HttpResponse("Do something")
+        return redirect('shopView',id=shop_id)
+        # return HttpResponse("Do something")
     else:
                # request was empty
         categories = Category.objects.all()
@@ -187,41 +217,62 @@ def add_product(request,shop_id):
 def information(request):
    return render(request, 'pages/information.html')
 
-def accountview(request):
-   return render(request, 'pages/accountview.html')
+def accountview(request,username):
+    vendor = User.objects.get(username=username)
+    if vendor:
+        shops = vendorShop.objects.filter(Owner=vendor)
+        return render(request, 'pages/accountview.html',{'vendor':vendor,'shops':shops})
+    else:
+        return render(request, 'pages/404.html')
 
-def vendor_shop (request):
+def accountEditview(request):
+    customer = request.user.profile
+    form = UserForm(instance=customer)
+    if request.method == 'POST':
+        form = UserForm(request.POST, request.FILES, instance=customer)
+        if form.is_valid():
+            form.save()
+
+    context = {'form': form}
+    return render(request, 'pages/accountsetting.html', context)
+
+def create_shop (request):
     errors = []
     if request.method == 'POST':
         name = request.POST.get("name", "")
         first_phone = request.POST.get("first_phone", "")
         second_phone = request.POST.get("second_phone", "")
-        status = request.POST.get("status", "")
+        status = "off"
         Owner = request.user
         form = vendorShop.objects.create(name=name, first_phone=first_phone, second_phone=second_phone, status=status,
                                          Owner=Owner)
 
         form.save()
-        return redirect('accountview')
+        return redirect('accountview',username=request.user)
     else:
          # request was empty
-         errors.append("Please fill the form.")
-    return render(request, 'pages/vendor/vendor_shop.html', {'errors': errors})
+         #errors.append("Please fill the form.")
+        errors = []
+    return render(request, 'pages/vendor/create_shop.html', {'errors': errors})
 
 
-def shop_View(request):
-   return render(request, 'pages/vendor/shop_view.html')
+def shop_View(request,id):
+    shop = vendorShop.objects.get(pk=id)
+    products = Product.objects.filter(shop=shop)
+    return render(request, 'pages/vendor/shop_view.html',{'shop':shop,'products':products})
 
-def shop_edit(request):
-    customer = request.user.profile
-    form = shopEdit(instance=customer)
+def shop_edit(request,id):
+    shop = vendorShop.objects.get(pk=id)
 
     if request.method == 'POST':
-        form = shopEdit(request.POST, request.FILES, instance=customer)
-        if form.is_valid():
-            form.save()
+        name = request.POST.get("name", "")
+        first_phone = request.POST.get("first_phone", "")
+        second_phone = request.POST.get("second_phone", "")
+        form = vendorShop.objects.filter(pk=id).update(name=name, first_phone=first_phone, second_phone=second_phone)
+        # form.save()
+        return redirect('accountview',username=request.user)
 
-    context = {'form': form}
+    context = {'shop':shop}
     return render(request, 'pages/vendor/shop_edit.html',context)
 
 def shop_details(request,myid):
