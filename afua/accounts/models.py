@@ -33,8 +33,6 @@ class UserProfile(models.Model):
     city = models.CharField(max_length=100, default='', blank=True)
     Nic = models.CharField(max_length=50, blank=True, default='')
     country = models.CharField(max_length=100, default='', blank=True)
-    address = models.CharField(max_length=100, default='', blank=True)
-    shopname = models.CharField(max_length=100, default='', blank=True)
     picture = models.ImageField(default="profile1.png",blank=True)
     
 

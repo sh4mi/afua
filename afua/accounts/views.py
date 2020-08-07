@@ -212,10 +212,19 @@ def add_product(request,shop_id):
         #errors.append("Please fill the form.")
     return render(request, 'pages/vendor/add_product.html', {'errors': errors,'categories':categories})
 
+def edit_product(request,edit_id):
+    edit=Product.objects.get(id=edit_id)
+    form = Edit_Product(instance=edit)
 
+    if request.method == 'POST':
+        form = Edit_Product(request.POST, request.FILES, instance=edit)
+        if form.is_valid():
+            form.save()
+           
+    context = {'form': form}
+    return render(request, 'pages/vendor/Edit_Product.html',context)
 
 def information(request):
-   return render(request, 'pages/information.html')
 
 def accountview(request,username):
     vendor = User.objects.get(username=username)
@@ -256,10 +265,18 @@ def create_shop (request):
     return render(request, 'pages/vendor/create_shop.html', {'errors': errors})
 
 
+<<<<<<< HEAD
 def shop_View(request,id):
     shop = vendorShop.objects.get(pk=id)
     products = Product.objects.filter(shop=shop)
     return render(request, 'pages/vendor/shop_view.html',{'shop':shop,'products':products})
+=======
+def shop_View(request,prod_id):
+    product = Product.objects.get(id=prod_id)
+    print(product)
+    context = {'product':product}
+    return render(request, 'pages/vendor/shop_view.html',context)
+>>>>>>> 641c5edaf0df575c04e46e3ada3ca41193d9e90e
 
 def shop_edit(request,id):
     shop = vendorShop.objects.get(pk=id)

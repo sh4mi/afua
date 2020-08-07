@@ -16,6 +16,10 @@ class shopEdit(ModelForm):
 			}
 
 
+class Edit_Product(ModelForm):
+	class Meta:
+		model = Product
+		fields = '__all__'
 
 
 
